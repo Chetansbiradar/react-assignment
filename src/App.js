@@ -9,13 +9,19 @@ import APITest from './components/APITest';
 import Cart from './components/Cart';
 import About from './components/About';
 import Contact from './components/Contact';
+import { useContext, useState } from 'react';
+import TodoContext from './utils/TodoContext';
 
 
 const AppLayout = () => {
+  const [todos, setTodos] = useState([]);
+  const [cart, setCart] = useState([]);
   return (
     <>
       <Header />
+      <TodoContext.Provider value={{todos, setTodos}}>
       <Outlet />
+      </TodoContext.Provider>
       <Footer />
     </>
   );

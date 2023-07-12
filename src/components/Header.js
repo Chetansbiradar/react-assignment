@@ -10,7 +10,7 @@ const Title=()=>{
 
 const Header=()=>{
     return(
-        <div className="flex justify-between p-5 shadow-xl">
+        <div className="flex justify-between p-5 shadow-md mb-2">
             <Title/>
             <ul className="flex space-x-2">
                 <Link to="/">Home</Link>
