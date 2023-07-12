@@ -13,6 +13,7 @@ import { useState } from 'react';
 import TodoContext from './utils/TodoContext';
 import { Provider } from 'react-redux';
 import store from './utils/store';
+import Error from './components/Error';
 
 
 const AppLayout = () => {
@@ -34,6 +35,7 @@ const BrowserRouter = createBrowserRouter([
   {
     path: "",
     element: <AppLayout />,
+    errorElement: <Error/>,
     children: [
       { path:"",
         element: <Body/>
