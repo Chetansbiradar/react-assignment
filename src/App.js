@@ -1,24 +1,55 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Body from './components/Body';
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import ToDo from './components/ToDo';
+import Shopping from './components/Shopping';
+import APITest from './components/APITest';
+import Cart from './components/Cart';
+
+
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
+
+const BrowserRouter = createBrowserRouter([
+  {
+    path: "",
+    element: <AppLayout />,
+    children: [
+      { path:"",
+        element: <Body/>
+      },
+      {
+        path: "todo",
+        element: <ToDo/>
+      },
+      {
+        path: "shopping",
+        element: <Shopping/>
+      },
+      {
+        path: "api",
+        element: <APITest/>
+      },
+      {
+        path: "cart",
+        element: <Cart/> 
+      }
+    ]
+  }
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={BrowserRouter}/>
   );
 }
 
