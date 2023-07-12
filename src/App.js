@@ -7,6 +7,8 @@ import ToDo from './components/ToDo';
 import Shopping from './components/Shopping';
 import APITest from './components/APITest';
 import Cart from './components/Cart';
+import About from './components/About';
+import Contact from './components/Contact';
 
 
 const AppLayout = () => {
@@ -42,6 +44,14 @@ const BrowserRouter = createBrowserRouter([
       {
         path: "cart",
         element: <Cart/> 
+      },
+      {
+        path: "about",
+        element:<About/>
+      },
+      {
+        path: "contact",
+        element: <Contact/>
       }
     ]
   }
