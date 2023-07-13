@@ -15,6 +15,20 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 import Error from './components/Error';
 
+// This app uses 
+// 1. react-router-dom
+// 2. redux-toolkit
+// 3. react-redux
+// 4. context-api
+// 5. tailwindcss
+// Hooks
+// 1. useState
+// 2. useEffect
+// 3. useReducer
+// 4. useSelector
+// 5. useDispatch
+// 6. useRouteError
+// 7. useContext
 
 const AppLayout = () => {
   const [todos, setTodos] = useState([]);
